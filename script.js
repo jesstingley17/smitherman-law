@@ -80,7 +80,11 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            if (entry.target.classList.contains('contact-item')) {
+                entry.target.style.transform = 'translateX(0)';
+            } else {
+                entry.target.style.transform = 'translateY(0)';
+            }
         }
     });
 }, observerOptions);
