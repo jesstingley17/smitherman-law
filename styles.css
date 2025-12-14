@@ -1179,6 +1179,49 @@ body {
     flex-wrap: wrap;
 }
 
+.footer-credit {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-credit p {
+    font-size: 0.9rem;
+    color: var(--gray-medium);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.credit-link {
+    color: var(--gold-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.credit-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--gold-accent);
+    transition: width 0.3s ease;
+}
+
+.credit-link:hover {
+    color: var(--gold-light);
+}
+
+.credit-link:hover::after {
+    width: 100%;
+}
+
 .badge-link {
     text-decoration: none;
     transition: transform 0.3s ease;
