@@ -584,9 +584,6 @@ body {
 
 .testimonials-source {
     margin-top: 1.5rem;
-}
-
-.testimonials-source {
     font-size: 0.9rem;
     color: var(--gray-text);
     opacity: 0.7;
@@ -619,18 +616,19 @@ body {
     display: flex;
     overflow: hidden;
     position: relative;
-    min-height: 400px;
+    min-height: 450px;
 }
 
 .testimonial-slide {
     min-width: 100%;
     opacity: 0;
     transform: translateX(100%);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 
 .testimonial-slide.active {
@@ -638,6 +636,7 @@ body {
     transform: translateX(0);
     position: relative;
     z-index: 1;
+    pointer-events: auto;
 }
 
 .testimonial-card {

@@ -2,10 +2,12 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-menu a').forEach(link => {
@@ -34,17 +36,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
-    
-    lastScroll = currentScroll;
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+        } else {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
+        
+        lastScroll = currentScroll;
+    }, { passive: true });
+}
 
 // Form submission handler
 const contactForm = document.getElementById('contactForm');
@@ -118,8 +122,8 @@ if (testimonialsCarousel) {
     let isTransitioning = false;
     
     // Function to show a specific slide
-    function showSlide(index, direction = 'next') {
-        if (isTransitioning) return;
+    function showSlide(index) {
+        if (isTransitioning || index < 0 || index >= slides.length) return;
         isTransitioning = true;
         
         // Remove active class from all slides and indicators
@@ -130,29 +134,31 @@ if (testimonialsCarousel) {
             }
         });
         
-        // Add active class to current slide and indicator
-        setTimeout(() => {
+        // Use requestAnimationFrame for smoother transitions
+        requestAnimationFrame(() => {
             slides[index].classList.add('active');
             if (indicators[index]) {
                 indicators[index].classList.add('active');
             }
             currentSlide = index;
-            isTransitioning = false;
-        }, 50);
+            
+            // Reset transition flag after animation completes
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 600);
+        });
     }
     
     // Function to go to next slide
     function nextSlide() {
-        if (isTransitioning) return;
         const next = (currentSlide + 1) % slides.length;
-        showSlide(next, 'next');
+        showSlide(next);
     }
     
     // Function to go to previous slide
     function prevSlide() {
-        if (isTransitioning) return;
         const prev = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(prev, 'prev');
+        showSlide(prev);
     }
     
     // Auto-rotate slides every 5 seconds
