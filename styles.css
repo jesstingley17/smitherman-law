@@ -562,6 +562,56 @@ body {
     box-shadow: 0 5px 15px rgba(200, 16, 46, 0.3);
 }
 
+/* Map Container */
+.map-container {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--gray-medium);
+}
+
+.map-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.map-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+}
+
+.map-address {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.map-address a {
+    color: var(--red-primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.map-address a:hover {
+    color: var(--red-dark);
+    text-decoration: underline;
+}
+
 /* Footer */
 .footer {
     background-color: var(--gray-dark);
@@ -603,6 +653,126 @@ body {
     margin-bottom: 0.5rem;
     font-weight: 300;
     color: var(--gray-medium);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background-color: var(--red-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Badges Section */
+.badges-section {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.badge-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.badge-link:hover {
+    transform: translateY(-5px);
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.badge:hover {
+    box-shadow: 0 6px 25px rgba(200, 16, 46, 0.2);
+}
+
+.badge-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.avvo-badge .badge-icon {
+    background-color: #0066CC;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+}
+
+.client-choice-badge .badge-icon {
+    background-color: #FFA500;
+    color: var(--white);
+    font-size: 1.8rem;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+}
+
+.badge-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--red-primary);
+}
+
+.badge-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-dark);
 }
 
 /* Responsive Design */
@@ -670,6 +840,16 @@ body {
     .services-grid {
         grid-template-columns: 1fr;
     }
+
+    .badges-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .badge {
+        width: 100%;
+        max-width: 250px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -685,6 +865,14 @@ body {
     .btn {
         width: 100%;
         text-align: center;
+    }
+
+    .map-wrapper iframe {
+        height: 350px;
+    }
+
+    .map-title {
+        font-size: 1.5rem;
     }
 }
 
