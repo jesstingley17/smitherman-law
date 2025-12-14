@@ -101,3 +101,131 @@ document.querySelectorAll('.contact-item').forEach(item => {
     observer.observe(item);
 });
 
+// Testimonials Carousel
+const testimonialsCarousel = document.querySelector('.testimonials-carousel');
+if (testimonialsCarousel) {
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.querySelector('.carousel-btn-prev');
+    const nextBtn = document.querySelector('.carousel-btn-next');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    let currentSlide = 0;
+    let autoSlideInterval;
+    let isTransitioning = false;
+    
+    // Function to show a specific slide
+    function showSlide(index, direction = 'next') {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        // Remove active class from all slides and indicators
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (indicators[i]) {
+                indicators[i].classList.remove('active');
+            }
+        });
+        
+        // Add active class to current slide and indicator
+        setTimeout(() => {
+            slides[index].classList.add('active');
+            if (indicators[index]) {
+                indicators[index].classList.add('active');
+            }
+            currentSlide = index;
+            isTransitioning = false;
+        }, 50);
+    }
+    
+    // Function to go to next slide
+    function nextSlide() {
+        if (isTransitioning) return;
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next, 'next');
+    }
+    
+    // Function to go to previous slide
+    function prevSlide() {
+        if (isTransitioning) return;
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev, 'prev');
+    }
+    
+    // Auto-rotate slides every 5 seconds
+    function startAutoSlide() {
+        stopAutoSlide(); // Clear any existing interval
+        autoSlideInterval = setInterval(() => {
+            if (!isTransitioning) {
+                nextSlide();
+            }
+        }, 5000);
+    }
+    
+    // Stop auto-rotation when user interacts
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
+    }
+    
+    // Event listeners for navigation buttons
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            nextSlide();
+            stopAutoSlide();
+            setTimeout(startAutoSlide, 10000); // Restart after 10 seconds
+        });
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            prevSlide();
+            stopAutoSlide();
+            setTimeout(startAutoSlide, 10000); // Restart after 10 seconds
+        });
+    }
+    
+    // Event listeners for indicator dots
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (index !== currentSlide && !isTransitioning) {
+                showSlide(index);
+                stopAutoSlide();
+                setTimeout(startAutoSlide, 10000); // Restart after 10 seconds
+            }
+        });
+    });
+    
+    // Initialize carousel
+    if (slides.length > 0) {
+        // Set initial state
+        slides.forEach((slide, i) => {
+            if (i === 0) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+        
+        if (indicators[0]) {
+            indicators[0].classList.add('active');
+        }
+        
+        // Start auto-rotation
+        startAutoSlide();
+        
+        // Pause auto-slide on hover
+        testimonialsCarousel.addEventListener('mouseenter', () => {
+            stopAutoSlide();
+        });
+        
+        testimonialsCarousel.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+    }
+}
+
