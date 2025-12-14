@@ -1279,21 +1279,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: auto;
 }
 
 .chamber-badge-image,
 .fla-badge-image {
-    max-width: 200px;
+    max-width: 100%;
     height: auto;
     display: block;
 }
 
 .chamber-badge-image {
     max-width: 180px;
+    width: 100%;
 }
 
 .fla-badge-image {
     max-width: 120px;
+    width: 100%;
 }
 
 .badge-content {
@@ -1399,6 +1402,14 @@ body {
     .badge {
         width: 100%;
         max-width: 250px;
+    }
+
+    .chamber-badge-image {
+        max-width: 150px;
+    }
+
+    .fla-badge-image {
+        max-width: 100px;
     }
 }
 
