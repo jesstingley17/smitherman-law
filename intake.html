@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospective Client Intake | Smitherman Law Group</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="intake-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <div class="logo-circle">
+                        <span class="logo-text">SLG</span>
+                    </div>
+                    <div class="logo-text-container">
+                        <div class="firm-name">SMITHERMAN LAW GROUP, LLC</div>
+                        <div class="firm-tagline">FAMILY LAW ATTORNEYS</div>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#contact" class="btn-cta">Schedule Consultation</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Intake Form Section -->
+    <section class="intake-section">
+        <div class="container intake-container">
+            <div class="intake-header">
+                <h1>SMITHERMAN</h1>
+                <h2>LAW GROUP, LLC</h2>
+                <h3>FAMILY LAW ATTORNEYS</h3>
+                <div class="header-info">
+                    <p><strong>Erika M. Smitherman, Owner</strong></p>
+                    <p>471 East Broad Street, Suite 1800</p>
+                    <p>Columbus, Ohio 43215</p>
+                    <p>Phone: 614-526-1306 | Fax: 888-649-8953</p>
+                    <p>www.smithermanlawgroup.com</p>
+                </div>
+                <h4>Prospective Client Intake</h4>
+            </div>
+
+            <form class="intake-form" id="intakeForm">
+                <div class="form-row">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="clientName">Client Name:</label>
+                    <input type="text" id="clientName" name="clientName" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="referralSource">Referral Source:</label>
+                    <input type="text" id="referralSource" name="referralSource">
+                </div>
+
+                <div class="form-row">
+                    <label for="clientTelephone">Client Telephone Number:</label>
+                    <input type="tel" id="clientTelephone" name="clientTelephone" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="clientEmail">Client Email Address:</label>
+                    <input type="email" id="clientEmail" name="clientEmail" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="employer">Employer:</label>
+                    <input type="text" id="employer" name="employer">
+                </div>
+
+                <div class="form-row-inline">
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title:</label>
+                        <input type="text" id="jobTitle" name="jobTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="annualIncome">Annual Income:</label>
+                        <input type="text" id="annualIncome" name="annualIncome">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="opposingPartyName">Opposing Party Name:</label>
+                    <input type="text" id="opposingPartyName" name="opposingPartyName">
+                </div>
+
+                <div class="form-row">
+                    <label for="opposingPartyEmployer">Opposing Party Employer:</label>
+                    <input type="text" id="opposingPartyEmployer" name="opposingPartyEmployer">
+                </div>
+
+                <div class="form-row-inline">
+                    <div class="form-group">
+                        <label for="opposingPartyJobTitle">Opposing Party Job Title:</label>
+                        <input type="text" id="opposingPartyJobTitle" name="opposingPartyJobTitle">
+                    </div>
+                    <div class="form-group">
+                        <label for="opposingPartyAnnualIncome">Annual Income:</label>
+                        <input type="text" id="opposingPartyAnnualIncome" name="opposingPartyAnnualIncome">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="opposingCounsel">Opposing Counsel:</label>
+                    <input type="text" id="opposingCounsel" name="opposingCounsel">
+                </div>
+
+                <div class="form-section">
+                    <label class="section-label">Case Type:</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="abuseNeglect" name="caseType" value="Abuse/Neglect/Dependency">
+                            <label for="abuseNeglect">Abuse/Neglect/Dependency</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="adoption" name="caseType" value="Adoption">
+                            <label for="adoption">Adoption</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="childSupport" name="caseType" value="Child Support">
+                            <label for="childSupport">Child Support</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="juvenileCustody" name="caseType" value="Juvenile Custody">
+                            <label for="juvenileCustody">Juvenile Custody</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="legalSeparation" name="caseType" value="Legal Separation">
+                            <label for="legalSeparation">Legal Separation</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="prenuptial" name="caseType" value="Prenuptial Agreement">
+                            <label for="prenuptial">Prenuptial</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="lastWill" name="caseType" value="Last Will & Testament">
+                            <label for="lastWill">Last Will &</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="healthCare" name="caseType" value="Health Care Directives">
+                            <label for="healthCare">Health Care Directives</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label class="section-label">Termination of Marriage:</label>
+                    <div class="termination-options">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terminationChildren" name="terminationOfMarriage" value="Children">
+                            <label for="terminationChildren">☐ Children:</label>
+                        </div>
+                        <div class="form-row-inline">
+                            <div class="form-group">
+                                <label for="lengthOfMarriage">☐ Length of Marriage:</label>
+                                <input type="text" id="lengthOfMarriage" name="lengthOfMarriage">
+                            </div>
+                            <div class="form-group">
+                                <label for="caseNumber">☐ Case No.:</label>
+                                <input type="text" id="caseNumber" name="caseNumber">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label class="section-label">Post Decree:</label>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="enforcement" name="postDecree" value="Enforcement">
+                            <label for="enforcement">☐ Enforcement:</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="modification" name="postDecree" value="Modification">
+                            <label for="modification">☐ Modification:</label>
+                        </div>
+                    </div>
+                    <div class="form-row-inline">
+                        <div class="form-group">
+                            <label for="judge">☐ Judge:</label>
+                            <input type="text" id="judge" name="judge">
+                        </div>
+                        <div class="form-group">
+                            <label for="magistrate">☐ Magistrate:</label>
+                            <input type="text" id="magistrate" name="magistrate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row checkbox-row">
+                    <input type="checkbox" id="civilProtectionOrder" name="civilProtectionOrder" value="Civil Protection Order">
+                    <label for="civilProtectionOrder">☐ Civil Protection Order</label>
+                </div>
+
+                <div class="form-row">
+                    <label for="miscellaneous">☐ Miscellaneous:</label>
+                    <input type="text" id="miscellaneous" name="miscellaneous">
+                </div>
+
+                <div class="form-row">
+                    <label for="county">County:</label>
+                    <input type="text" id="county" name="county">
+                </div>
+
+                <div class="form-row">
+                    <label for="appointmentDate">Appointment Date & Time:</label>
+                    <input type="datetime-local" id="appointmentDate" name="appointmentDate">
+                </div>
+
+                <div class="form-row">
+                    <label for="retainerInfo">Retainer Information:</label>
+                    <input type="text" id="retainerInfo" name="retainerInfo">
+                </div>
+
+                <div class="form-row">
+                    <label for="intakeNotes">Intake Notes:</label>
+                    <textarea id="intakeNotes" name="intakeNotes" rows="6"></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <div class="footer-info">
+                        <p><strong>Erika M. Smitherman, Owner</strong></p>
+                        <p>471 East Broad Street, Suite 1800</p>
+                        <p>Columbus, Ohio 43215</p>
+                        <p>Phone: 614-526-1306 | Fax: 888-649-8953</p>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Intake Form</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    <a href="https://smithermanlawgroup.com/wp-content/uploads/2025/03/SLG-Prospective-Client-Intake-Fillable.pdf" target="_blank" class="btn btn-secondary">Download PDF Version</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-circle">
+                        <span class="logo-text">SLG</span>
+                    </div>
+                    <div class="footer-text">
+                        <div class="firm-name">SMITHERMAN LAW GROUP, LLC</div>
+                        <div class="firm-tagline">FAMILY LAW ATTORNEYS</div>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 Smitherman Law Group, LLC. All rights reserved.</p>
+                    <p>471 East Broad Street, Suite 1800 | Columbus, OH 43215</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="intake-script.js"></script>
+</body>
+</html>
+
